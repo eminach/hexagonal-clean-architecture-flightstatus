@@ -19,36 +19,36 @@ import java.util.Date;
 public class FlightStatus {
 
     @NotNull
-    private StatusType statusType;
+    public StatusType statusType;
 
-    private AirlinceCode airlinceCode;
+    public AirlinceCode airlinceCode;
 
-    private String flightNumber;
-
-    @NotNull
-    @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
-    private Date scheduledDepartureTime;
+    public String flightNumber;
 
     @NotNull
     @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
-    private Date scheduledArrivalTime;
+    public Date scheduledDepartureTime;
 
     @NotNull
     @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
-    private Date updatedDepartureTime;
+    public Date scheduledArrivalTime;
 
     @NotNull
     @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
-    private Date updatedArrivalTime;
+    public Date updatedDepartureTime;
 
     @NotNull
-    private String departureStation;
+    @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss")
+    public Date updatedArrivalTime;
 
     @NotNull
-    private String arrivalStation;
+    public String departureStation;
 
     @NotNull
-    private String gate;
+    public String arrivalStation;
+
+    @NotNull
+    public String gate;
 
 }
 

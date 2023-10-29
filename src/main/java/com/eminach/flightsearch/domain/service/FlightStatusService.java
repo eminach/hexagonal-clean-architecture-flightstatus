@@ -5,6 +5,7 @@ import com.eminach.flightsearch.application.ports.output.FlightStatusEventPublis
 import com.eminach.flightsearch.application.ports.output.FlightStatusOutputPort;
 import com.eminach.flightsearch.domain.model.AirlinceCode;
 import com.eminach.flightsearch.domain.model.FlightStatus;
+import com.eminach.flightsearch.domain.model.StatusType;
 import lombok.AllArgsConstructor;
 
 import java.util.Date;
@@ -23,8 +24,14 @@ public class FlightStatusService implements GetFlightStatusUseCase {
         Implement code get flightstatus from external sources, or entity
         from repository: flightStatusOutputPort.getFlightStatusById()
          */
-
+        //Lets create for simplicity mock object
         FlightStatus flightStatus = new FlightStatus();
+        flightStatus.statusType = StatusType.ON_TIME;
+        flightStatus.airlinceCode = airlinceCode;
+        flightStatus.flightNumber = flightNumber;
+        flightStatus.departureStation = "CGN";
+        flightStatus.arrivalStation = "BER";
+        flightStatus.scheduledDepartureTime =  flightDate;
 
         return flightStatus;
     }
