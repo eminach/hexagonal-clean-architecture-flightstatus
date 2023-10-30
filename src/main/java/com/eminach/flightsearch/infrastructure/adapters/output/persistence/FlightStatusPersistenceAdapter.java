@@ -6,12 +6,16 @@ import com.eminach.flightsearch.infrastructure.adapters.output.persistence.entit
 import com.eminach.flightsearch.infrastructure.adapters.output.persistence.mapper.FlightStatusPersistenceMapper;
 import com.eminach.flightsearch.infrastructure.adapters.output.persistence.repository.FlightStatusRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
 @RequiredArgsConstructor
 public class FlightStatusPersistenceAdapter implements FlightStatusOutputPort {
 
+    private static final Logger LOG = LogManager.getLogger(FlightStatusPersistenceAdapter.class);
     private final FlightStatusRepository flightStatusRepository;
 
     private final FlightStatusPersistenceMapper flightStatusPersistenceMapper;
@@ -19,6 +23,7 @@ public class FlightStatusPersistenceAdapter implements FlightStatusOutputPort {
     @Override
     public FlightStatus saveFlightStatus(FlightStatus flightStatus) {
         FlightStatusEntity flightStatusEntity = flightStatusPersistenceMapper.toFlightStatusEntity(flightStatus);
+        LOG.log(Level.INFO, "Flight status api called");
         flightStatusEntity = flightStatusRepository.save(flightStatusEntity);
         return flightStatusPersistenceMapper.toFlightStatus(flightStatusEntity);
     }
