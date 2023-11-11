@@ -1,3 +1,0 @@
-{ "id": 1000, "status": "cancelled" }
-{ "id": 1001, "status": "departured" }
-{ "id": 1002, "status": "arrived" }

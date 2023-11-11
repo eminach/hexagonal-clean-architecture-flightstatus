@@ -6,13 +6,18 @@ import com.eminach.flightsearch.application.ports.output.FlightStatusOutputPort;
 import com.eminach.flightsearch.domain.model.AirlinceCode;
 import com.eminach.flightsearch.domain.model.FlightStatus;
 import com.eminach.flightsearch.domain.model.StatusType;
+import com.eminach.flightsearch.infrastructure.adapters.output.persistence.FlightStatusPersistenceAdapter;
 import lombok.AllArgsConstructor;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Date;
 
 @AllArgsConstructor
 public class FlightStatusService implements GetFlightStatusUseCase {
 
+    private static final Logger LOG = LogManager.getLogger(FlightStatusService.class);
     private final FlightStatusOutputPort flightStatusOutputPort;
 
     private final FlightStatusEventPublisher flightStatusEventPublisher;
@@ -32,7 +37,7 @@ public class FlightStatusService implements GetFlightStatusUseCase {
         flightStatus.departureStation = "CGN";
         flightStatus.arrivalStation = "BER";
         flightStatus.scheduledDepartureTime =  flightDate;
-
+        LOG.log(Level.INFO, "Flight status created");
         return flightStatus;
     }
 

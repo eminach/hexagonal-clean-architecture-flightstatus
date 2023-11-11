@@ -2,8 +2,8 @@ server:
   port: 8080
 
 logging:
-  level:
-    com.eminach.flightsearch.flightsearch: info
+  file:
+    path: .
 
 spring:
   jpa:

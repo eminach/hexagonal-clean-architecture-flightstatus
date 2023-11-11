@@ -21,6 +21,9 @@ public class FlightStatusRestAdapter {
 
     @GetMapping(value = "/flight-status")
     public ResponseEntity<FlightStatusResponse> getFlightStatus(@RequestBody FlightStatusRequest request){
+        /*
+         This is dummy operation
+         */
         FlightStatus flightStatus = getFlightStatusUseCase.getFlightStatus(request.airlinceCode, request.flightNumber, request.flightDate);
         return new ResponseEntity<>(flightStatusRestMapper.toFlightStatusQueryResponse(flightStatus), HttpStatus.OK);
     }
