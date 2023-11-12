@@ -37,7 +37,8 @@ public class FlightStatusService implements GetFlightStatusUseCase {
         flightStatus.departureStation = "CGN";
         flightStatus.arrivalStation = "BER";
         flightStatus.scheduledDepartureTime =  flightDate;
-        LOG.log(Level.INFO, "Flight status created");
+
+        LOG.log(Level.INFO, flightStatus.toString());
         return flightStatus;
     }
 

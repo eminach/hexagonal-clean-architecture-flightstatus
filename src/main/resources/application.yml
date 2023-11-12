@@ -3,7 +3,7 @@ server:
 
 logging:
   file:
-    path: .
+    path: ./flight_status_data/
 
 spring:
   jpa:

@@ -50,5 +50,20 @@ public class FlightStatus {
     @NotNull
     public String gate;
 
+    @Override
+    public String toString() {
+        return "FlightStatus{" +
+                "statusType=" + statusType +
+                ", airlinceCode=" + airlinceCode +
+                ", flightNumber='" + flightNumber + '\'' +
+                ", scheduledDepartureTime=" + scheduledDepartureTime +
+                ", scheduledArrivalTime=" + scheduledArrivalTime +
+                ", updatedDepartureTime=" + updatedDepartureTime +
+                ", updatedArrivalTime=" + updatedArrivalTime +
+                ", departureStation='" + departureStation + '\'' +
+                ", arrivalStation='" + arrivalStation + '\'' +
+                ", gate='" + gate + '\'' +
+                '}';
+    }
 }
 
