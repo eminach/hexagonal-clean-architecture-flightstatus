@@ -23,5 +23,5 @@ To run the application first build the application itself with command:
 
 Then to start all all 4 containers run: <code>docker-compose up</code>
 
-Check the "flight_event" index in Kibana <code>localhost:5601</code> Index Management page, or
+Check  Kibana <code>localhost:5601</code> Index Management page, or
 in Dev Tools run: <code>GET /_cat/indices?h=index</code>
